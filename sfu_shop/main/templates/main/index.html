@@ -1,0 +1,81 @@
+{% load static %}
+
+
+<html class="bx-core bx-mac bx-no-touch bx-retina bx-chrome"><head>
+	<title>Войдите через аккаунт СФУ</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="robots" content="noindex, nofollow">
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link href="{% static 'main/css/intranet-common.css' %}" type="text/css" rel="stylesheet">
+<link href="{% static 'main/css/ui.font.opensans.css' %}" type="text/css" rel="stylesheet">
+<link href="{% static 'main/css/main.popup.bundle.css' %}" type="text/css" rel="stylesheet">
+<link href="{% static 'main/css/template_styles.css' %}" type="text/css" data-template-style="true" rel="stylesheet">
+</head>
+
+
+<body>
+<table class="log-main-table">
+	<tbody><tr>
+		<td class="log-main-cell">
+			<div class="sfu-avt"></div>
+			<div class="my-sfu">
+				Мой<b>СФУ</b>
+				<div class="my-sfu-corp-portal">
+					Корпоративный портал					<div class="about-us-popup-link" id="about_us_popup_link">Подробнее</div>
+					
+				</div>
+			</div>
+			<div class="log-popup-wrap " id="login-popup-wrap">
+				<div class="log-popup" id="login-popup">
+<div class="log-popup-header">Войдите через аккаунт СФУ</div>
+
+
+<form name="form_auth" method="post" target="_top" action="/index.php?login=yes">
+  <input type="hidden" name="AUTH_FORM" value="Y">
+  <input type="hidden" name="TYPE" value="AUTH">
+      <input type="hidden" name="backurl" value="/index.php">
+    
+  <div class="">
+    <div class="login-item">
+      <!--[if IE]><span class="login-label">Логин</span><![endif]-->
+      <input class="login-inp" type="text" name="USER_LOGIN" placeholder="Логин" value="" maxlength="255">
+    </div>
+    <div class="login-item">
+      <!--[if IE]><span class="login-label">Пароль</span><![endif]-->
+      <input class="login-inp" type="password" name="USER_PASSWORD" placeholder="Пароль" maxlength="255">
+    </div>
+    
+    <div class="login-text login-item">
+          </div>
+  </div>
+  <div class="log-popup-footer">
+    <input type="submit" value="Войти" class="login-btn" onclick="BX.addClass(this, 'wait');">
+    <a href="https://users.sfu-kras.ru/?page=no_login" target="_blank" class="forgot-link">Узнать логин</a><a href="https://users.sfu-kras.ru/?page=no_passw" target="_blank" class="forgot-link">Восстановить пароль</a>
+  </div>
+</form>
+
+<div class="log-popup-caption-wrap">
+  <div class="log-popup-caption">
+  </div>
+</div>
+</div>
+</div>
+</td>
+</tr>
+<tr>
+  <td>
+    <div class="sfu-footer">
+        © 2010-2025 Сибирский федеральный университет      <a class="personal-data-agreement-link" href="http://about.sfu-kras.ru/node/10201">
+        Соглашение о Персональных данных      </a>
+      <div class="policy-popup-link" id="policy_popup_link">Политика конфиденциальности</div>
+      <div class="policy-popup" id="policy_popup">
+        <!-- <div class='pp-close-cross'></div> -->
+      </div>
+    </div>
+  </td>
+</tr>
+</tbody></table>
+
+
+
+</body></html>
