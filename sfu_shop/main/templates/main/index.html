@@ -1,6 +1,4 @@
 {% load static %}
-
-
 <html class="bx-core bx-mac bx-no-touch bx-retina bx-chrome"><head>
 	<title>Войдите через аккаунт СФУ</title>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -30,29 +28,26 @@
 <div class="log-popup-header">Войдите через аккаунт СФУ</div>
 
 
-<form name="form_auth" method="post" target="_top" action="/index.php?login=yes">
-  <input type="hidden" name="AUTH_FORM" value="Y">
-  <input type="hidden" name="TYPE" value="AUTH">
-      <input type="hidden" name="backurl" value="/index.php">
-    
-  <div class="">
-    <div class="login-item">
-      <!--[if IE]><span class="login-label">Логин</span><![endif]-->
-      <input class="login-inp" type="text" name="USER_LOGIN" placeholder="Логин" value="" maxlength="255">
-    </div>
-    <div class="login-item">
-      <!--[if IE]><span class="login-label">Пароль</span><![endif]-->
-      <input class="login-inp" type="password" name="USER_PASSWORD" placeholder="Пароль" maxlength="255">
-    </div>
-    
-    <div class="login-text login-item">
-          </div>
-  </div>
-  <div class="log-popup-footer">
-    <input type="submit" value="Войти" class="login-btn" onclick="BX.addClass(this, 'wait');">
-    <a href="https://users.sfu-kras.ru/?page=no_login" target="_blank" class="forgot-link">Узнать логин</a><a href="https://users.sfu-kras.ru/?page=no_passw" target="_blank" class="forgot-link">Восстановить пароль</a>
-  </div>
-</form>
+<form method="post">
+        {% csrf_token %}
+        
+        <input type="hidden" name="AUTH_FORM" value="Y">
+        <input type="hidden" name="TYPE" value="AUTH">
+        <input type="hidden" name="backurl" value="/">
+        
+        <div>
+            <div class="login-item">
+                {{ form.username }}
+            </div>
+            <div class="login-item">
+                {{ form.password }}
+            </div>
+        </div>
+        
+        <div>
+            <input type="submit" value="Войти" class="login-btn">
+        </div>
+    </form>
 
 <div class="log-popup-caption-wrap">
   <div class="log-popup-caption">
